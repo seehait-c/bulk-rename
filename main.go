@@ -18,7 +18,7 @@ var opts struct {
 	Prefix          string `short:"p" long:"prefix" description:"File name prefix" default:"file"`
 	SpaceBeforeID   bool   `short:"s" long:"space-before-id" description:"Add space before ID"`
 	IncludeDotFiles bool   `short:"d" long:"include-dot-files" description:"Include dot files"`
-	DryRun          bool   `short:"t" long:"dry-run" description:"Dry-run"`
+	Apply           bool   `short:"a" long:"apply" description:"Apply"`
 }
 
 func main() {
@@ -58,7 +58,7 @@ func main() {
 	for i, file := range sortedFiles {
 		newFile := fmt.Sprintf("%s%s%0*d%s", opts.Prefix, space, idLen, opts.StartID+i, file.Ext)
 		log.Printf("%s -> %s", file.NameExt, newFile)
-		if !opts.DryRun {
+		if opts.Apply {
 			if err := os.Rename(file.NameExt, newFile); err != nil {
 				log.Printf("Error while renaming %s to %s, %s", file.NameExt, newFile, err)
 			}
