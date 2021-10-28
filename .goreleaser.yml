@@ -29,14 +29,13 @@ changelog:
       - '^docs:'
       - '^test:'
 brews:
-    # GitHub/GitLab repository to push the formula to
-    tap:
-      owner: Seehait Chockthanyawat
-      name: homebrew-tap
-    commit_author:
-      name: Seehait Chockthanyawat
-      email: seehait.c@gmail.com
-    folder: Formula
-    homepage: "https://github.com/seehait-c/bulk-rename"
-    description: "Easy files renaming tools which rename files in a bulk manner."
-    license: "MIT"
+  tap:
+    owner: seehait-c
+    name: homebrew-bulk-rename
+  commit_author:
+    name: "Seehait Chockthanyawat"
+    email: seehait.c@gmail.com
+  folder: Formula
+  homepage: "https://github.com/seehait-c/bulk-rename"
+  description: "Easy files renaming tools which rename files in a bulk manner."
+  license: "MIT"
