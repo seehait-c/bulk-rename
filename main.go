@@ -39,6 +39,10 @@ func main() {
 	var filteredFiles []fs.FileInfo
 	for _, file := range files {
 		if opts.IncludeDotFiles || file.Name()[0] != '.' {
+			if file.IsDir() {
+				continue
+			}
+
 			filteredFiles = append(filteredFiles, file)
 		}
 	}
